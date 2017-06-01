@@ -16,13 +16,19 @@
 
 
 #tweets_list{
-	text-align: center;
+	/*text-align: center;*/
 	padding: 0 20%;
 	list-style-type: none;
 
 }
 
- 
+ #tweets_list > li > .message {
+ 	padding: 2px 17px;
+ }
+
+ #tweets_list > li > .time-ago {
+ } 
+
 
 
  #tweets_list > li{

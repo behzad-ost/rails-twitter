@@ -12,6 +12,10 @@
 
 <ul id="tweets_list">
 	<% current_user.all_tweets.reverse.each do |tweet| %>
-	<li><%= tweet.user.email%> : <%= tweet.message%></li>
+	<li>
+		<div class= "username"> <%= tweet.user.email%> </div>
+		<div class= "message"> <%= tweet.message%> </div>			
+		<div class= "time-ago"> <%= distance_of_time_in_words(Time.now, tweet.created_at)%> ago </div>			
+	</li>
 	<%end%>
 </ul>
