@@ -1,0 +1,17 @@
+
+<h1>Home Page</h1>
+
+<p>This is "<%=current_user.email%>" home page.</p>
+
+<%= form_for Tweet.new do |f| %>
+	<%= f.text_area :message %>
+	<br>
+	<%= f.submit "Post" %>
+<% end %>
+
+
+<ul id="tweets_list">
+	<% current_user.all_tweets.reverse.each do |tweet| %>
+	<li><%= tweet.user.email%> : <%= tweet.message%></li>
+	<%end%>
+</ul>
