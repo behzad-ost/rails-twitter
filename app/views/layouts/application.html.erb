@@ -26,6 +26,12 @@
 </p>
 <%= yield %>
 
-<h5 id="footer">Behzad Ousat - Ali Akhavani</h5>
+<h5 id="footer">
+  <%= link_to 'EN', controller: '/language', action: 'english'%>
+  <%= link_to 'FA', controller: '/language', action: 'persian'%>
+</h5>
+<h5 id="footer">
+  <%= t('names') %>
+</h5>
 </body>
 </html>
