@@ -1,5 +1,5 @@
 
-<h1>Home Page</h1>
+<h1><%= t('home') %></h1>
 
 <p>This is "<%=current_user.email%>" home page.</p>
 
@@ -16,7 +16,7 @@
 	<li>
 		<div class= "username"> <%= tweet.user.email%> </div>
 		<div class= "message"> <%= tweet.message%> </div>			
-		<div class= "time-ago"> <%= distance_of_time_in_words(Time.now, tweet.created_at)%> ago </div>			
+		<div class= "time-ago"> <%= distance_of_time_in_words(Time.now, tweet.created_at)%></div>
 	</li>
 	<%end%>
 </ul>

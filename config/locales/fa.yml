@@ -1,7 +1,23 @@
 fa:
   hello: "سلام"
   names: "سیدعلی اخوانی - بهزاد اوسط"
-  distance_in_words:
-    x_minutes:
-      one: "۱ دقیقه"
-      other: "%{count} دقایق"
+  home: صفحه‌ی اصلی
+  datetime:
+    distance_in_words:
+      half_a_minute: 'نصف دقیقه'
+      less_than_x_seconds:
+        zero: 'کمتر از ۱ ثانیه'
+        other: '{{count}} ثانیه'
+      x_seconds:
+        other: '{{count}} ثانیه'
+      less_than_x_minutes:
+        zero: 'کمتر از ۱ دقیقه'
+        other: '{{count}} دقیقه'
+      x_minutes:
+        other: '{{count}} دقیقه'
+      about_x_hours:
+        one: 'حدود ۱ ساعت'
+        other: '{{count}} ساعت'
+      x_days:
+        one: '۱ روز'
+        other: '{{count}} روز'
