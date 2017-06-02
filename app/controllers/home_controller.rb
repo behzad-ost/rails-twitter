@@ -3,16 +3,17 @@ class HomeController < ApplicationController
   end
 
   def friends
-  	@user = User.find_by_username(params[:username])
-  	@tweets = @user.followings
-  	@username = @user.username
-    # render json: @tweets
+  	@friends = current_user.followings
+  	@username = current_user.username
+    # render json: @friends
   end
 
   def show
-  	@user = User.find_by_username(params[:username])
-  	@tweets = @user.all_tweets
-  	@username = @user.username
+    @user = User.find_by_username(params[:username])
+    @tweets = @user.all_tweets
+    @username = @user.username
+    # render json: @tweets
+
   end
 
   def toggle_follow
