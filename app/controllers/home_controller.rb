@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   	@user = User.find_by_username(params[:username])
   	@tweets = @user.all_tweets
   	@username = @user.username
+    render json: @tweets
   end
 
   def show
