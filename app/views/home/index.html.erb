@@ -4,11 +4,12 @@
 <p>This is "<%=current_user.email%>" home page.</p>
 
 <%= form_for Tweet.new do |f| %>
-	<%= f.text_area :message %>
+	<%= f.text_area :message, :maxlength => 140  %>
 	<br>
 	<%= f.submit "Post" %>
 <% end %>
 
+<h3><%=current_user.followings.count%> Followings</h3>
 
 <ul id="tweets_list">
 	<% current_user.all_tweets.reverse.each do |tweet| %>

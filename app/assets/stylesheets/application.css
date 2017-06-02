@@ -35,3 +35,11 @@
  	border-top: solid #2a98a2 1px; 
  	border-bottom: solid #2a98a2 1px; 
  }
+
+#logo{
+	margin: 0 40%;
+}
+
+#footer {
+	text-align: center;
+}

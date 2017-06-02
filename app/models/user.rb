@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   	Tweet.where("user_id in (?)", followings.map(&:id).push(self.id))
   end
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

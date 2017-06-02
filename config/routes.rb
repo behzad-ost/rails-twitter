@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
+    get '/friends' => 'home#friends' , as: :friends_page
     get '/:username' => 'home#show' , as: :user_page
     post '/:username/toggle_follow' => 'home#toggle_follow', as: :toggle_follow
 

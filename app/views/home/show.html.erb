@@ -3,18 +3,27 @@
 
 
 <%= form_tag toggle_follow_path do %>
-	<%= submit_tag (current_user.is_following(@user) ? "Following" : "Not Following")%>
+	<%= submit_tag (current_user.is_following(@user) ? "UnFollow" : "Follow")%>
+<% end %>
+
+<% if current_user.is_following(@user) %>
+	<ul id="tweets_list">
+		<% @tweets.reverse.each do |tweet| %>
+		<li>
+			<div class= "username"> <%= tweet.user.email%> </div>
+			<div class= "message"> <%= tweet.message%> </div>			
+			<div class= "time-ago"> <%= distance_of_time_in_words(Time.now, tweet.created_at)%> ago </div>			
+		</li>
+		<%end%>
+	</ul>
+<% else %>
+	<ul id="tweets_list">
+	<li>
+		You Are Not Following @<%=@user.username%>.
+	</li>
+</ul>
 <% end %>
 
 
-<ul id="tweets_list">
-	<% @tweets.reverse.each do |tweet| %>
-	<li>
-		<div class= "username"> <%= tweet.user.email%> </div>
-		<div class= "message"> <%= tweet.message%> </div>			
-		<div class= "time-ago"> <%= distance_of_time_in_words(Time.now, tweet.created_at)%> ago </div>			
-	</li>
-	<%end%>
-</ul>
 
 <%= link_to 'Back', root_path %>

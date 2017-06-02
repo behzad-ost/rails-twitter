@@ -1,0 +1,9 @@
+<h1>My Friends</h1>
+
+<ul id="">
+	<% current_user.followings.reverse.each do |person| %>
+	<li>
+		<div class= "username"> <%= person.username%> </div>
+	</li>
+	<%end%>
+</ul>
