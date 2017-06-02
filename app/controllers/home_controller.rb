@@ -4,9 +4,9 @@ class HomeController < ApplicationController
 
   def friends
   	@user = User.find_by_username(params[:username])
-  	@tweets = @user.all_tweets
+  	@tweets = @user.followings
   	@username = @user.username
-    render json: @tweets
+    # render json: @tweets
   end
 
   def show
